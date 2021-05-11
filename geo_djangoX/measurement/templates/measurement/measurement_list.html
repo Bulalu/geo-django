@@ -1,0 +1,24 @@
+{% extends "base_bootstrap.html"%}
+{% block content%}
+
+
+<h1>Measurement List</h1>
+
+
+{% if measurement_list%}
+<ul>
+    {%  for measurement in measurement_list %}
+        <li>
+            <a href="{% url 'measurement:measurement_detail' measurement.id %}">{{ measurement }}</a>
+        </li>
+    {% endfor %}
+      
+</ul>
+{% else %}
+<p>
+    <h3>you have no list in the database</h3>
+</p>
+{% endif %}
+
+
+{% endblock %}

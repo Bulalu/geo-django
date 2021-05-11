@@ -1,0 +1,14 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+
+<h1>Measurement Detail</h1>
+
+<p>
+    Distance from {{ measurement.location }} to {{ measurement.destination}} is {{measurement.distance}}km
+</p>
+<p>
+    <a href="{% url 'measurement:all' %}">Home Page</a>  
+</p>
+<input type="submit" value="Cancel" onclick="window.location.href='{% url 'measurement:thanks' %}';return false;">
+{% endblock %}
